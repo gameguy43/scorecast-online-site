@@ -1,0 +1,8 @@
+/*** shadows for all but IE6 ***/
+#primary-nav ul.sf-shadow ul {
+	background:	url('images/shadow.png') no-repeat bottom right;
+	padding: 0 6px 7px 0px;
+}
+#primary-nav ul.sf-shadow ul.sf-shadow-off {
+	background: transparent;
+}

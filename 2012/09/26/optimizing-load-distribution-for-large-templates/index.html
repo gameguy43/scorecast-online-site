@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<meta property="og:image" content="../../../../wp-content/uploads/2012/09/t_load_vepro_multicore-160x120.png" />
+
+
+
+
+
+<title>
+
+  How to Make Large DAW Templates Load Faster - SCOREcastOnline.com
+</title>
+
+
+
+<!--[if lt IE 9]>
+
+<link rel="stylesheet" type="text/css" href="../../../../wp-content/themes/hottopix/css/iecss.css" />
+
+<![endif]-->
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../../../feed" />
+
+<link rel="alternate" type="text/xml" title="RSS .92" href="../../../../feed/rss" />
+
+<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="../../../../feed/atom" />
+
+<link rel="pingback" href="../../../../xmlrpc.php" />
+
+
+
+
+<style type="text/css">
+
+
+</style>
+
+
+
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//connect.facebook.net' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='dns-prefetch' href='//dsms0mj1bbhn4.cloudfront.net' />
+<link rel='dns-prefetch' href='//apps.shareaholic.com' />
+<link rel='dns-prefetch' href='//grace.shareaholic.com' />
+<link rel='dns-prefetch' href='//analytics.shareaholic.com' />
+<link rel='dns-prefetch' href='//recs.shareaholic.com' />
+<link rel='dns-prefetch' href='//go.shareaholic.com' />
+<link rel='dns-prefetch' href='//partner.shareaholic.com' />
+<link rel="alternate" type="application/rss+xml" title="SCOREcastOnline.com &raquo; Feed" href="../../../../feed" />
+<link rel="alternate" type="application/rss+xml" title="SCOREcastOnline.com &raquo; Comments Feed" href="../../../../comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="SCOREcastOnline.com &raquo; How to Make Large DAW Templates Load Faster Comments Feed" href="feed" />
+<!-- Powered by Shareaholic; Grow your audience faster! - https://www.shareaholic.com -->
+<link rel='preload' href='//dsms0mj1bbhn4.cloudfront.net/assets/pub/shareaholic.js' as='script' />
+<script data-cfasync='false'>
+  //<![CDATA[
+    _SHR_SETTINGS = {"endpoints":{"local_recs_url":"http:\/\/www.scorecastonline.com\/wp-admin\/admin-ajax.php?action=shareaholic_permalink_related","ajax_url":"http:\/\/www.scorecastonline.com\/wp-admin\/admin-ajax.php"},"url_components":{"year":"2012","monthnum":"09","day":"26","hour":"08","minute":"00","second":"00","post_id":"1739","postname":"optimizing-load-distribution-for-large-templates","category":"tech"}};
+  //]]>
+</script>
+<script data-cfasync='false'
+        src='//dsms0mj1bbhn4.cloudfront.net/assets/pub/shareaholic.js'
+        data-shr-siteid='8d9206b39a37c6c2986c2f98b4b7ec4c' async >
+</script>
+
+<!-- Shareaholic Content Tags -->
+<meta name='shareaholic:site_name' content='SCOREcastOnline.com' />
+<meta name='shareaholic:language' content='en-US' />
+<meta name='shareaholic:url' content='.' />
+<meta name='shareaholic:keywords' content='latest resources, technology, tutorials, post' />
+<meta name='shareaholic:article_published_time' content='2012-09-26T08:00:00-07:00' />
+<meta name='shareaholic:article_modified_time' content='2012-09-20T19:33:31-07:00' />
+<meta name='shareaholic:shareable_page' content='true' />
+<meta name='shareaholic:article_author_name' content='Tobias Escher' />
+<meta name='shareaholic:site_id' content='8d9206b39a37c6c2986c2f98b4b7ec4c' />
+<meta name='shareaholic:wp_version' content='8.11.0' />
+<meta name='shareaholic:image' content='../../../../wp-content/uploads/2012/09/t_load_vepro_multicore.png' />
+<!-- Shareaholic Content Tags End -->
+
+<!-- Shareaholic Open Graph Tags -->
+<meta property='og:image' content='../../../../wp-content/uploads/2012/09/t_load_vepro_multicore.png' />
+<!-- Shareaholic Open Graph Tags End -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.scorecastonline.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.1.1"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='taqyeem-style-css'  href='../../../../wp-content/plugins/taqyeem/style.css?ver=5.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='../../../../wp-includes/css/dist/block-library/style.min.css?ver=5.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='../../../../wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-biographia-bio-css'  href='../../../../wp-content/plugins/wp-biographia/css/wp-biographia.min.css?ver=5.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='ht-style-css'  href='../../../../wp-content/themes/hottopix/style.css?ver=5.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='reset-css'  href='../../../../wp-content/themes/hottopix/css/reset.css?ver=5.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='googlefonts-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%3A400%2C600%2C700%7COpen+Sans+Condensed%3A300%2C700%7COswald%3A300%2C400%2C700%7CAlegreya%3A400&#038;subset=latin%2Clatin-ext%2Ccyrillic%2Ccyrillic-ext%2Cgreek-ext%2Cgreek%2Cvietnamese&#038;ver=5.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='theiaPostSlider-css'  href='../../../../wp-content/themes/hottopix/admin/theia-post-slider/css/buttons-red.css?ver=5.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='../../../../wp-content/plugins/jetpack/css/jetpack.css?ver=7.1.1' type='text/css' media='all' />
+<script type='text/javascript' src='../../../../wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../../wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../../wp-content/plugins/taqyeem/js/tie.js?ver=5.1.1'></script>
+<script type='text/javascript' src='../../../../wp-content/themes/hottopix/js/jquery.elastislide.js?ver=5.1.1'></script>
+<script type='text/javascript' src='../../../../wp-content/themes/hottopix/js/scripts.js?ver=5.1.1'></script>
+<script type='text/javascript' src='../../../../wp-content/themes/hottopix/js/respond.min.js?ver=5.1.1'></script>
+<script type='text/javascript' src='../../../../wp-content/themes/hottopix/js/retina.js?ver=5.1.1'></script>
+<script type='text/javascript' src='../../../../wp-content/themes/hottopix/admin/theia-post-slider/js/balupton-history.js/history.js?ver=1.7.1'></script>
+<script type='text/javascript' src='../../../../wp-content/themes/hottopix/admin/theia-post-slider/js/balupton-history.js/history.adapter.jquery.js?ver=1.7.1'></script>
+<script type='text/javascript' src='../../../../wp-content/themes/hottopix/admin/theia-post-slider/js/tps-transition-slide.js?ver=1.0.8'></script>
+<link rel='https://api.w.org/' href='../../../../wp-json' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../../wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='How to Use Chord Voicings Effectively – Part 2' href='../../24/chord-voicings-part-2' />
+<link rel='next' title='SPOTLIGHT ON: Sonokinetic&#8217;s &#8220;Vivace&#8221;' href='../../27/spotlight-on-sonokinetics-vivace' />
+<meta name="generator" content="WordPress 5.1.1" />
+<link rel="canonical" href="." />
+<link rel='shortlink' href='https://wp.me/p202Ia-s3' />
+<link rel="alternate" type="application/json+oembed" href="../../../../wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.scorecastonline.com%2F2012%2F09%2F26%2Foptimizing-load-distribution-for-large-templates%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../../wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.scorecastonline.com%2F2012%2F09%2F26%2Foptimizing-load-distribution-for-large-templates%2F&#038;format=xml" />
+<script type="text/javascript"><!--
+function powerpress_pinw(pinw_url){window.open(pinw_url, 'PowerPressPlayer','toolbar=0,status=0,resizable=1,width=460,height=320');	return false;}
+//-->
+</script>
+<style type="text/css">
+ul.scfw_16px li, ul.scfw_24px li, ul.scfw_32px li, ul.scfw_16px li a, ul.scfw_24px li a, ul.scfw_32px li a {
+	display:inline !important;
+	float:none !important;
+	border:0 !important;
+	background:transparent none !important;
+	margin:0 !important;
+	padding:0 !important;
+}
+ul.scfw_16px li {
+	margin:0 2px 0 0 !important;
+}
+ul.scfw_24px li {
+	margin:0 3px 0 0 !important;
+}
+ul.scfw_32px li {
+	margin:0 5px 0 0 !important;
+}
+ul.scfw_text_img li:before, ul.scfw_16px li:before, ul.scfw_24px li:before, ul.scfw_32px li:before {
+	content:none !important;
+}
+.scfw img {
+	float:none !important;
+}
+</style>	
+	<script type='text/javascript'>
+/* <![CDATA[ */
+var taqyeem = {"ajaxurl":"../../../../wp-admin/admin-ajax.php" , "your_rating":"Your Rating:"};
+/* ]]> */
+</script>
+<style type="text/css" media="screen"> 
+.review-final-score {border-color: #ffffff;}
+.review-box  {background-color:#ffffff ;}
+#review-box h2.review-box-header , .user-rate-wrap  {background-color:#999999 ;}
+.review-stars .review-item , .review-percentage .review-item span, .review-summary  {background-color:#000000 ;}
+.review-percentage .review-item span span,.review-final-score {background-color:#ad0000 ;}
+.review-summary a {
+	color: #666666;	text-decoration: underline;}
+.review-summary a:hover {
+	color: #ffffff;	}
+
+#review-box h2.review-box-header{
+	color :#000000;
+	font-weight: bold;
+}
+
+</style> 
+
+<link rel='dns-prefetch' href='//v0.wordpress.com'/>
+
+
+
+
+
+
+
+
+<style type='text/css'>
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:100,200,300,400,500,600,700,800,900|Oswald:100,200,300,400,500,600,700,800,900|Oswald:100,200,300,400,500,600,700,800,900&subset=latin,latin-ext,cyrillic,cyrillic-ext,greek-ext,greek,vietnamese);
+
+
+
+ul.main-nav li a,
+
+ul.main-nav li ul li a {
+
+	font-family: 'Open Sans Condensed', sans-serif;
+
+	}
+
+
+
+.main-text h1,
+
+.sub-text h2 {
+
+	font-family: 'Oswald', sans-serif;
+
+	}
+
+
+
+.home-widget .cat-dark-text h2,
+
+.home-widget .category-light h2 a,
+
+.sidebar-small-widget .category-light h2 a,
+
+ul.home-carousel li h2,
+
+h1.headline,
+
+h1.headline-page,
+
+.prev-post a,
+
+.next-post a,
+
+.related-text a,
+
+#post-404 h1,
+
+h3.cat-header,
+
+.archive-text h2 a,
+
+.archive-text-noimg h2 a,
+
+ul.widget-buzz li h2 a,
+
+.sidebar-widget .cat-dark-text h2,
+
+.sidebar-widget .category-light h2 a,
+
+.footer-widget .category-light h2 a {
+
+	font-family: 'Oswald', sans-serif;
+
+	}
+
+
+
+#logo-wrapper,
+
+#logo-small {
+
+	height: 165px;
+
+	}
+
+
+
+ul.main-nav li:hover,
+
+ul.main-nav li a:hover,
+
+ul.main-nav li.current-menu-item,
+
+ul.main-nav li.current-post-parent {
+
+	background: #cc0000 url(../../../../wp-content/themes/hottopix/images/menu-fade.png) repeat-x bottom;
+
+	}
+
+
+
+span.comment-count,
+
+h3.post-header,
+
+h3.comment-header,
+
+h3.home-widget-header,
+
+h3.small-widget-header,
+
+h3.sidebar-widget-header,
+
+span.post-tags-header,
+
+.post-tags a:hover,
+
+ul.tabber-widget li.active,
+
+ul.tabber-widget li:hover,
+
+.tag-cloud a:hover {
+
+	background: #cc0000;
+
+	}
+
+
+
+span.home-widget-header,
+
+span.small-widget-header,
+
+span.sidebar-widget-header,
+
+ul.tabber-widget,
+
+#comments,
+
+#related-posts {
+
+	border-top: 3px solid #cc0000;
+
+	}
+
+
+
+ol.commentlist {
+
+	border-bottom: 3px solid #cc0000;
+
+	}
+
+
+
+.prev-post,
+
+.next-post {
+
+	color: #cc0000;
+
+	}
+
+
+
+#nav-wrapper {
+
+	background: #333333 url(../../../../wp-content/themes/hottopix/images/menu-fade.png) repeat-x bottom;
+
+	}
+
+
+
+ul.main-nav li ul li {
+
+	background: #333333;
+
+	}
+
+
+
+#nav-mobi select {
+
+	background: #333333 url(../../../../wp-content/themes/hottopix/images/triangle-dark.png) no-repeat right;
+
+	}
+
+
+
+a, a:visited {
+
+	color: #cc0000;
+
+	}
+
+
+
+#wallpaper {
+
+	background: url() no-repeat 50% 0;
+
+	}
+
+
+
+</style><meta property="og:site_name" content="SCOREcastOnline.com" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="fb:app_id" content="109555475814551" />
+<meta property="og:url" content="." />
+<meta property="og:title" content="How to Make Large DAW Templates Load Faster" />
+<meta property="og:description" content="Making a large template work well without hiccups, but still not demanding extremely powerful hardware is no easy task. But fortunately it is a task where there is plenty of room for optimizations. This article shows you a few tips and may come in handy." />
+<meta property="og:image" content="../../../../wp-content/uploads/2012/09/t_load_vepro_multicore.png" />
+<meta property="og:image:width" content="620" />
+<meta property="og:image:height" content="219" />
+<meta property="og:image" content="../../../../wp-content/uploads/2012/09/t_load_kontakt_multicore.png" />
+<meta property="og:image:width" content="720" />
+<meta property="og:image:height" content="456" />
+<meta property="og:image" content="../../../../wp-content/uploads/2012/09/t_load_kontakt_preload.png" />
+<meta property="og:image:width" content="720" />
+<meta property="og:image:height" content="456" />
+<meta property="article:published_time" content="2012-09-26T15:00:00+00:00" />
+<meta property="article:modified_time" content="2012-09-21T02:33:31+00:00" />
+<meta property="article:author" content="../../../../author/tobiasescher" />
+<meta property="article:section" content="Latest Resources" />
+<meta property="article:tag" content="Technology" />
+<meta property="article:tag" content="Tutorials" />
+
+
+
+</head>
+
+
+
+<body class="post-template-default single single-post postid-1739 single-format-standard">
+
+
+
+<div id="site">
+
+	
+	<div id="wrapper">
+
+		<div id="header-wrapper">
+
+			<div id="top-header-wrapper">
+
+				<div id="top-nav">
+
+					<div class="menu-pages-container"><ul id="menu-pages" class="menu"><li id="menu-item-2037" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2037"><a href="../../../../about">About SCOREcast</a></li>
+<li id="menu-item-2039" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2039"><a href="../../../../category/podcast">The SCOREcast Podcast Show</a></li>
+<li id="menu-item-2035" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2035"><a href="../../../../article-submissions">Write for SCOREcast</a></li>
+<li id="menu-item-2036" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2036"><a href="../../../../contact">Contact Us</a></li>
+<li id="menu-item-1698" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1698"><a href="../../../../contributor-login">Contributor Login</a></li>
+</ul></div>
+				</div><!--top-nav-->
+
+				<div id="content-social">
+
+					<ul>
+
+						
+						<li><a href="http://www.facebook.com/scorecastonline" alt="Facebook" class="fb-but" target="_blank"></a></li>
+
+						
+						
+						<li><a href="http://www.twitter.com/scorecastonline" alt="Twitter" class="twitter-but" target="_blank"></a></li>
+
+						
+						
+						
+						
+						
+						<li><a href="http://www.youtube.com/user/scorecastonline" alt="YouTube" class="youtube-but" target="_blank"></a></li>
+
+						
+						
+						<li><a href="../../../../feed/rss" alt="RSS Feed" class="rss-but"></a></li>
+
+					</ul>
+
+				</div><!--content-social-->
+
+			</div><!--top-header-wrapper-->
+
+			
+			
+			<div id="logo-wrapper" itemscope itemtype="http://schema.org/Organization">
+
+				
+					<a itemprop="url" href="http://www.scorecastonline.com"><img itemprop="logo" src="../../../../wp-content/uploads/2013/06/SCO_header_571x150.png" alt="SCOREcastOnline.com" /></a>
+
+				
+			</div><!--logo-wrapper-->
+
+			
+		</div><!--header-wrapper-->
+
+		<div id="nav-wrapper">
+
+			<ul class="main-nav">
+
+				<div class="menu-channels-container"><ul id="menu-channels" class="menu"><li id="menu-item-1230" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1230"><a href="../../../..">Home</a></li>
+<li id="menu-item-2158" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2158"><a href="../../../../community">Chapter Communities</a></li>
+<li id="menu-item-2159" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2159"><a href="../../../../category/podcast">SCOREcast Podcast</a></li>
+<li id="menu-item-2082" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-2082"><a href="../../../../category/business">Industry</a>
+<ul class="sub-menu">
+	<li id="menu-item-2083" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2083"><a href="../../../../category/business/business-business">Business</a></li>
+	<li id="menu-item-2084" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2084"><a href="../../../../category/business/composers-corner">Composers Corner</a></li>
+</ul>
+</li>
+<li id="menu-item-2089" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2089"><a href="#">Craft</a>
+<ul class="sub-menu">
+	<li id="menu-item-2088" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2088"><a href="../../../../category/composition">Composition</a></li>
+	<li id="menu-item-2044" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2044"><a href="../../../../category/scu-orchestration">Orchestration</a></li>
+</ul>
+</li>
+<li id="menu-item-2046" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-2046"><a href="../../../../category/scorecast-university">SCOREcast University</a>
+<ul class="sub-menu">
+	<li id="menu-item-2041" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2041"><a href="../../../../category/scu-conception">Conception</a></li>
+	<li id="menu-item-2047" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2047"><a href="../../../../category/scu-sequencing">Sequencing &#038; Mockups</a></li>
+	<li id="menu-item-2045" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2045"><a href="../../../../category/scu-recording_prep">Recording &#038; Prep</a></li>
+	<li id="menu-item-2043" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2043"><a href="../../../../category/scu-mixing">Mixing &#038; Mastering</a></li>
+	<li id="menu-item-2042" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2042"><a href="../../../../category/scu-delivery">Delivery</a></li>
+</ul>
+</li>
+<li id="menu-item-2085" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-2085"><a href="../../../../category/tech">Tech</a>
+<ul class="sub-menu">
+	<li id="menu-item-2048" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2048"><a href="../../../../category/spotlight-on">Spotlight ON</a></li>
+	<li id="menu-item-2087" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-2087"><a href="../../../../category/tech/tutorials">Tutorials</a></li>
+	<li id="menu-item-2086" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2086"><a href="../../../../category/tech/gear2">Gear</a></li>
+</ul>
+</li>
+</ul></div>
+			</ul><!--main-nav-->
+
+			<div id="nav-mobi">
+
+ 				<div class="menu-channels-container"><select><option value="#">Menu</option><option value="../../../..">Home</option>
+<option value="../../../../community">Chapter Communities</option>
+<option value="../../../../category/podcast">SCOREcast Podcast</option>
+<option value="../../../../category/business">Industry	<option value="../../../../category/business/business-business">-Business</option>
+	<option value="../../../../category/business/composers-corner">-Composers Corner</option>
+</option>
+<option value="#">Craft	<option value="../../../../category/composition">-Composition</option>
+	<option value="../../../../category/scu-orchestration">-Orchestration</option>
+</option>
+<option value="../../../../category/scorecast-university">SCOREcast University	<option value="../../../../category/scu-conception">-Conception</option>
+	<option value="../../../../category/scu-sequencing">-Sequencing &#038; Mockups</option>
+	<option value="../../../../category/scu-recording_prep">-Recording &#038; Prep</option>
+	<option value="../../../../category/scu-mixing">-Mixing &#038; Mastering</option>
+	<option value="../../../../category/scu-delivery">-Delivery</option>
+</option>
+<option value="../../../../category/tech">Tech	<option value="../../../../category/spotlight-on">-Spotlight ON</option>
+	<option value="../../../../category/tech/tutorials">-Tutorials</option>
+	<option value="../../../../category/tech/gear2">-Gear</option>
+</option>
+</select></div>
+			</div><!--nav-mobi-->
+
+			<div id="main-search">
+
+				<form method="get" id="searchform" action="../../../..">
+
+	<input type="text" name="s" id="s" value="Search" onfocus='if (this.value == "Search") { this.value = ""; }' onblur='if (this.value == "") { this.value = "Search"; }' />
+
+	<input type="hidden" id="search-button" />
+
+</form>
+			</div><!--main-search-->
+
+		</div><!--nav-wrapper-->
+
+
+
+
+
+<div id="main">
+
+	<div id="content-wrapper">
+
+		
+		<div class="breadcrumb">
+
+			<div id="crumbs"><a href="http://www.scorecastonline.com">Home</a> / <a href="../../../../category/featured">Latest Resources</a> / <span class="current">How to Make Large DAW Templates Load Faster</span></div>
+		</div><!--breadcrumb-->
+
+		<div id="title-main">
+
+			<h1 class="headline">How to Make Large DAW Templates Load Faster</h1>
+
+			<span class="post-byline">By <a href="../../../../author/tobiasescher" title="Posts by Tobias Escher" rel="author">Tobias Escher</a> on September 26, 2012</span><span class="twitter-byline"><a href="http://www.twitter.com/https://twitter.com/#!/NovatlanSound" target="blank">@https://twitter.com/#!/NovatlanSound</a></span>
+		</div><!--title-main-->
+
+		<div id="home-main">
+
+			<div id="post-area" class="post-1739 post type-post status-publish format-standard has-post-thumbnail hentry category-featured category-tech category-tutorials">
+
+				
+				<div id="content-area">
+
+					
+						
+						<div class="post-image">
+
+							<img width="620" height="219" src="../../../../wp-content/uploads/2012/09/t_load_vepro_multicore.png" class="attachment-post-thumb size-post-thumb wp-post-image" alt="" srcset="../../../../wp-content/uploads/2012/09/t_load_vepro_multicore.png 620w, ../../../../wp-content/uploads/2012/09/t_load_vepro_multicore-389x137.png 389w" sizes="(max-width: 620px) 100vw, 620px" />
+						</div><!--post-image-->
+
+						
+					
+					<div class='shareaholic-canvas' data-app='share_buttons' data-title='How to Make Large DAW Templates Load Faster' data-link='.' data-summary='Making a large template work well without hiccups, but still not demanding extremely powerful hardware is no easy task. But fortunately it is a task where there is plenty of room for optimizations. This article shows you a few tips and may come in handy.' data-app-id='57279' data-app-id-name='post_above_content'></div><p><strong>Most composers rely on custom composing templates for their work. No matter how we set them up, whether simply by feeding back audio channels into our master machine, or using specialized software such as VSL’s Vienna Ensemble Pro &#8211; they allow us to have the tools of our trade at our disposal at the click of a mouse. But the bigger these templates get, the more important caring for it and optimizing it will become.</strong></p>
+<p>&nbsp;</p>
+<p>As someone who has had the chance to set up quite a sizable number of composing templates with the help of VE Pro, I’ve had my fair share of bottlenecks that can really bring a template to a crawl. Fortunately, there are a few things you can do to make everything work as smoothly as possible. This article is based on Vienna Ensemble Pro 5, but most things mentioned here will probably also work with either VE Pro 4, or a completely different hosting software. You may even be able to use some of the tips when working solely in your sequencer.</p>
+<p>A tiny bit of terminology: The machine where your sequencer (Logic, Cubase, Studio One,…) runs on is called „DAW“ in this article, which stands for Digital Audio Workstation. Any additional machines used for hosting instruments or for applying FX are called „Slave(s)“.</p>
+<p>&nbsp;</p>
+<h3>1) Planning a template:</h3>
+<p>Before even thinking about building a template, you need to be aware of what you want to have in there. This is extremely important; not just to save time during the actual process of building the template (we’ll come to that in another article!), but also in making sure everything performs nicely. Regardless of whether you want to use external hosts like VE Pro or have everything sitting in your sequencer, the most important point to think about is load distribution. Spread your instruments over multiple instances of Kontakt/Play or whatever sampler you are using. If using VE Pro or similar software, do not fit everything into one single instance, but spread it a bit so that each instance has a bit to do all the time and not just one single instance working away like mad. If you have very CPU-intensive instruments, it can make sense so spread a single library over multiple instances of the sampler. You might for example want to have all your Violins and Violas in one Kontakt instance, with a second instance housing the Cellos and Basses. This way, the CPU load is distributed across two instances and consequently two cores.</p>
+<p>Balancing the load gets even more important when using slaves. Make sure each machine shares an equal workload. It does not make sense to dedicate one machine solely to Sough-East-Carribean Bongo tremolos and other „esoteric“ sounds, unless you really need them daily. As a rule of thumb, I try to have the bread and butter sounds of one section as well as some more special instruments from another section per slave if enough slaves are available. So slave 1 would for example do all the basic woodwinds and some brass effects and the big taikos. Slave 2 has the basic brass sounds and more special woodwinds like alto flute, contrabassoon and some tuned percussion. And so on…  Of course how you spread things totally depends on the available resources and your way of working. Just try to balance things evenly. I know it is tempting to say „this machine does all the strings“, but this is not the best idea: As soon as you have a solo string piece, this one machine needs to do all the work and the rest sits around idle. Slaves give you the unique advantage of doing their own processing &#8211; they can be loaded to the brim and the DAW won’t even notice a hit in performance! Again more about this in greater detail in a later article.</p>
+<p>&nbsp;</p>
+<h3>2) Using fast drives/SSDs and adjusting the preload buffer:</h3>
+<p>Most sampled instruments only load a bit of the sample material into the system memory and stream the rest from disk. The amount of what is loaded into memory is determined by preload buffer setting. I have found that it most of the time is set relatively high and can be lowered a fair bit even if you are using conventional hard drives. In fact, I still have a „green“ energy-saving drive in daily use and it performs remarkably well. If you use very fast drives (10.000rpm conventional drives or SSDs), you can set this preload buffer even lower. Lowering it means that your loaded samples consume less memory at the expense of your sampler needing to read much more directly from disk. Toy around with this setting and see what works for you. If you get crackles, pops, lost notes and other issues, raise it a bit.</p>
+<p>In Kontakt 5, you will find the preload buffer setting in the options inside the Memory tab. By default it is set to 60kb; on regular 7.200 rmp drives you should be able to pull it back to at least 40 or even lower on pieces not requiring every single instrument to play at the same time.</p>
+<p><a href="../../../../?attachment_id=1768" rel="attachment wp-att-1768"><img class="aligncenter size-medium wp-image-1768" title="Kontakt - Preload buffer" src="../../../../wp-content/uploads/2012/09/t_load_kontakt_preload-389x246.png" alt="" width="389" height="246" srcset="../../../../wp-content/uploads/2012/09/t_load_kontakt_preload-389x246.png 389w, ../../../../wp-content/uploads/2012/09/t_load_kontakt_preload-640x405.png 640w, ../../../../wp-content/uploads/2012/09/t_load_kontakt_preload.png 720w" sizes="(max-width: 389px) 100vw, 389px" /></a></p>
+<p>Vienna Instruments (Pro) has a similar setting in its options, accessible by clicking the little gearwheel icon:</p>
+<p><a href="../../../../?attachment_id=1771" rel="attachment wp-att-1771"><img class="aligncenter size-medium wp-image-1771" title="VI Pro 2 - Preload Buffer" src="../../../../wp-content/uploads/2012/09/t_load_vipro_preload-389x425.png" alt="" width="389" height="425" srcset="../../../../wp-content/uploads/2012/09/t_load_vipro_preload-389x425.png 389w, ../../../../wp-content/uploads/2012/09/t_load_vipro_preload.png 476w" sizes="(max-width: 389px) 100vw, 389px" /></a></p>
+<p>Again experiment with the settings to see what works for you.</p>
+<p>&nbsp;</p>
+<h3>3) Switching off unused or unnecessary articulations/mic positions:</h3>
+<p>Sounds painfully obvious: It makes no sense to have stuff running you never need. If possible, switch off any articulations you do not need. Many sample libraries allow you to unload unused articulation directly within the plugin GUI. If that does not work, use the „Purge all“ feature if such a feature is present in the sampler you are using. Kontakt, for example, has this ability: Click „Purge all samples“ in the purge menu and Kontakt will unload all samples. Samples will then be reloaded while you use the instruments on a „need to“ basis.</p>
+<p><a href="../../../../?attachment_id=1769" rel="attachment wp-att-1769"><img class="aligncenter size-medium wp-image-1769" title="Kontakt - Purge feature" src="../../../../wp-content/uploads/2012/09/t_load_kontakt_purge-389x101.png" alt="" width="389" height="101" srcset="../../../../wp-content/uploads/2012/09/t_load_kontakt_purge-389x101.png 389w, ../../../../wp-content/uploads/2012/09/t_load_kontakt_purge-640x167.png 640w, ../../../../wp-content/uploads/2012/09/t_load_kontakt_purge.png 641w" sizes="(max-width: 389px) 100vw, 389px" /></a></p>
+<p>If you are using reasonably fast hard drives, or even SSDs, this process should be instantaneous. In any case, it saves you a ton of loading times after reloading the project and you can be sure that only the samples really needed in the project use up memory.</p>
+<p>Most libraries also have the ability to unload unused microphone positions. Especially if you are using a 3<sup>rd</sup> party reverb quite heavily, switching off highly reverberated samples with lots of room information can not only save you a lot of memory, but also make your mix less cluttered. If you have a rather wet library or microphone position (i.e. one with lots of room information bakes into the samples), after applying a reverb, you basically have two rooms at the same time: The room where the samples were recorded and the room your reverb adds. Especially when using special positioning and reverberation tools such as VSL MIR Pro with 3<sup>rd</sup> party sample libraries, it is often a good idea to only use the close microphone position, if one is available. VSL MIR in particular works best with extremely dry samples.</p>
+<p>&nbsp;</p>
+<p>Both tips 2 and 3 do not directly influence CPU load, but they do indirectly: With a lower preload buffer, CPU load will increase a tiny bit because more stuff needs to be loaded. This effect, however, is negligible in most cases. Having less articulations loaded reduces the amount of samples that need to be loaded. And reducing the number of active microphone positions means less samples need to by played at the same time when pressing a key.</p>
+<p>&nbsp;</p>
+<h3>4) Only switch on multicore support for one host:</h3>
+<p>Most hosting applications and samplers today have multicore support. That means that they will intelligently balance their workload over all available cores of your machine. Some also allow you to specify a number of cores for the application to use. While this in theory is all nice and well, the cold harsh reality quickly shows that these multicore balancing features tend to get in each others way. One practical example: If you host Kontakt 5 within VE Pro 5, by default, both applications have multicore support enabled. It is my experience that CPU consumptil will drop noticeably when you either switch off multiprocessing in Kontakt, or alternatively in VE Pro. In my experience, setting VE Pro to use 2 threads per instance and switching off Kontakt’s multicore support works best, but you should definitely try this for yourself!</p>
+<p>You can find the relevant settings in VE Pro’s and Kontakt’s Options:</p>
+<p><a href="../../../../?attachment_id=1770" rel="attachment wp-att-1770"><img class="aligncenter size-medium wp-image-1770" title="VE Pro - Multiprocessor support" src="../../../../wp-content/uploads/2012/09/t_load_vepro_multicore-389x137.png" alt="" width="389" height="137" srcset="../../../../wp-content/uploads/2012/09/t_load_vepro_multicore-389x137.png 389w, ../../../../wp-content/uploads/2012/09/t_load_vepro_multicore.png 620w" sizes="(max-width: 389px) 100vw, 389px" /></a></p>
+<p><a href="../../../../?attachment_id=1767" rel="attachment wp-att-1767"><img class="aligncenter size-medium wp-image-1767" title="Kontakt - Multiprocessor support" src="../../../../wp-content/uploads/2012/09/t_load_kontakt_multicore-389x246.png" alt="" width="389" height="246" srcset="../../../../wp-content/uploads/2012/09/t_load_kontakt_multicore-389x246.png 389w, ../../../../wp-content/uploads/2012/09/t_load_kontakt_multicore-640x405.png 640w, ../../../../wp-content/uploads/2012/09/t_load_kontakt_multicore.png 720w" sizes="(max-width: 389px) 100vw, 389px" /></a></p>
+<p>Especially on OSX, if your VE Pro instances consume 10-20% CPU per instance when doing absolutely nothing, this will most likely solve the issue! I have so far not seen any performance impact by switching off multicore support &#8211; on the contrary. If you are running parts of your template in the DAW, make sure to experiment a lot with different multicore settings: Having both VE Pro (or any other host) as well as your sequencer running, both of them probably offering support for threads, it might even make sense to deactivate multiprocessing support completely in the sequencer. I have made very good experiences doing that with Cubase, especially on the Mac.</p>
+<p>&nbsp;</p>
+<h3>5) Bonus Cubase Tip: Use only 8 MIDI ports for VST3:</h3>
+<p>This one curiously enough has crept up at least a dozen times in the last two weeks: Many people using Cubase with very large templates have only two or three VE Pro instances, because the VST3 version of VE Pro allows the use of multiple MIDI ports. Consequently, they use a lot of ports &#8211; the highest I have seen was 64 MIDI ports per instance.</p>
+<p>(Let us briefly hold a minute’s silence for all Logic and DP users out there stuck with just 1 MIDI port as part of the Audio Unit plugin standard. Ok, minute over.)</p>
+<p>Cubase users with lots of MIDI ports face the issue that their templates will take ages to load. This is due to a behaviour of Cubase that makes it take a very long time to initialize any VST3 plugin that exceeds 8 MIDI ports. What I have heard is that Cubase somehow initializes all the additional ports and checks their allocations. The first eight MIDI ports are not treated this way. This is why it makes sense to only use 8 MIDI ports per VE Pro instance and in order to be able to have the number of instruments required, use more instances with 8 ports instead of just a few instances with 64 ports.</p>
+<p>As far as I can tell, only Cubase shows this behaviour. Users of Studio One (which is also able to use VST3 plugins) can use 64 ports without overly long loading times.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>I hope you found this article informative. In due course there will be a second one with some planning advice for templates, as promised earlier. Post your feedback and questions in the comments and I’ll be happy to address it.</p>
+ <!-- WP Biographia v3.3.2 -->
+<div class="wp-biographia-container-top" style="background-color: #eadcdc; border-top: 4px solid #000000;"><div class="wp-biographia-pic" style="height:100px; width:100px;"><img alt='' src='http://2.gravatar.com/avatar/e35d244068b8c6c35f809c5bce58e651?s=100&#038;r=g' srcset='http://2.gravatar.com/avatar/e35d244068b8c6c35f809c5bce58e651?s=200&#038;r=g 2x' class='wp-biographia-avatar avatar-100 photo' height='100' width='100' /></div><div class="wp-biographia-text"><h3><a href="../../../../author/tobiasescher" title="Tobias Escher">Tobias Escher</a></h3><p>Based in Germany, Tobias J. Escher serves as Director of Technology for SCOREcast's European division. He is an educator in the field of media music and technology, and combines his classical training with his passion for music technology as a freelance composer and orchestrator. Tobias works closely with a number of software manufacturers as well as a technical administrator at the <i>University of Mainz</i>, where he graduated with an M.A. degree in Musicology and Anglophone Languages in 2012. He is also one of the founders of the <i>Unofficial Sibelius Wiki</i> and demonstrates Sibelius as an Avid artist.</p><div class="wp-biographia-links"><small><ul class="wp-biographia-list wp-biographia-list-icon"><li><a href="http://www.novatlan-sound.de" target="_blank" title="Tobias Escher On The Web" class="wp-biographia-link-icon"><img src="../../../../wp-content/plugins/wp-biographia/images/web.png" class="wp-biographia-item-icon" /></a></li><li><a href="https://twitter.com/#!/NovatlanSound" target="_blank" title="Tobias Escher On Twitter" class="wp-biographia-link-icon"><img src="../../../../wp-content/plugins/wp-biographia/images/twitter.png" class="wp-biographia-item-icon" /></a></li><li><a href="http://facebook.com/NovatlanSound" target="_blank" title="Tobias Escher On Facebook" class="wp-biographia-link-icon"><img src="../../../../wp-content/plugins/wp-biographia/images/facebook.png" class="wp-biographia-item-icon" /></a></li><li><a href="39033404" target="_blank" title="Tobias Escher On LinkedIn" class="wp-biographia-link-icon"><img src="../../../../wp-content/plugins/wp-biographia/images/linkedin.png" class="wp-biographia-item-icon" /></a></li><li><a href="http://www.youtube.com/user/NovatlanSound" target="_blank" title="Tobias Escher On YouTube" class="wp-biographia-link-icon"><img src="../../../../wp-content/plugins/wp-biographia/images/youtube.png" class="wp-biographia-item-icon" /></a></li><li><a href="../../../../author/tobiasescher" target="_blank" title="More Posts By Tobias Escher" class="wp-biographia-link-icon"><img src="../../../../wp-content/plugins/wp-biographia/images/wordpress.png" class="wp-biographia-item-icon" /></a></li></ul></small></div></div></div><!-- WP Biographia v3.3.2 -->
+<div class='shareaholic-canvas' data-app='share_buttons' data-title='How to Make Large DAW Templates Load Faster' data-link='.' data-summary='Making a large template work well without hiccups, but still not demanding extremely powerful hardware is no easy task. But fortunately it is a task where there is plenty of room for optimizations. This article shows you a few tips and may come in handy.' data-app-id='57288' data-app-id-name='post_below_content'></div>
+					
+				</div><!--content-area-->
+
+				
+				<div class="post-tags">
+
+					<span class="post-tags-header">Related Items</span>
+				</div><!--post-tags-->
+
+				
+			</div><!--post-area-->
+
+			
+			<div class="prev-next-wrapper">
+
+				<div class="prev-post">
+
+					&larr; Previous Story <a href="../../24/chord-voicings-part-2" rel="prev">How to Use Chord Voicings Effectively – Part 2</a>
+				</div><!--prev-post-->
+
+				<div class="next-post">
+
+					Next Story &rarr; <a href="../../../10/13/scorecast-34-peter-rotter" rel="next">SCOREcast 34: Peter Rotter</a>
+				</div><!--next-post-->
+
+			</div><!--prev-next-wrapper-->
+
+			
+			
+			
+
+<!-- *******************************************************************************************************************-->
+<!-- Comments Evolved for Wordpress v1.6.3 ( http://wordpress.org/plugins/gplus-comments/ ) -->
+<!-- *******************************************************************************************************************-->
+
+<!-- comments-evolved-tabs -->
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+  window.comment_tab_width = $('#comments-evolved-tabs').innerWidth();
+});
+</script>
+<div id="comments-evolved-tabs">
+<a name="comments"></a>
+    <ul class="controls inline clearfix">
+    <li class="active" id='comments-evolved-disqus-control'><a href='#comments-evolved-disqus-tab'><img id='comments-evolved-disqus-icon' src='../../../../wp-content/plugins/gplus-comments/assets/images/icons/default/disqus.png'><span id='comments-evolved-disqus-label'>Disqus</span></a></li>
+<li id='comments-evolved-facebook-control'><a href='#comments-evolved-facebook-tab'><img id='comments-evolved-facebook-icon' src='../../../../wp-content/plugins/gplus-comments/assets/images/icons/default/facebook.png'><span id='comments-evolved-facebook-label'>Facebook</span></a></li>
+<li id='comments-evolved-gplus-control'><a href='#comments-evolved-gplus-tab'><img id='comments-evolved-gplus-icon' src='../../../../wp-content/plugins/gplus-comments/assets/images/icons/default/gplus.png'><span id='comments-evolved-gplus-label'>Google Plus</span></a></li>
+<li id='comments-evolved-trackback-control'><a href='#comments-evolved-trackback-tab'><img id='comments-evolved-trackback-icon' src='../../../../wp-content/plugins/gplus-comments/assets/images/icons/default/trackback.png'><span id='comments-evolved-trackback-label'>Mentions</span></a></li>
+  </ul>
+  <!-- comments-evolved-disqus-tab -->
+<div id='comments-evolved-disqus-tab' class='comments-evolved-embed-container content-tab clearfix'>
+<div class="comments-evolved-embed-container clearfix" id="disqus_thread">Loading Disqus Comments ...</div>
+<script type="text/javascript">
+  var disqus_shortname = 'scorecastonline';
+  (function(d) {
+    var dsq = d.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(dsq);
+  })(document);
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+<!-- // comments-evolved-disqus-tab -->
+<!-- comments-evolved-facebook-tab -->
+<div id='comments-evolved-facebook-tab' class='comments-evolved-embed-container content-tab clearfix'>
+<div id="fb-root"></div>
+<div id="fb-comments">Loading Facebook Comments ...</div>
+<script type="text/javascript">
+  jQuery(document).ready(function($)
+  {
+    $('#fb-comments').html('<div class="fb-comments" data-width="'+window.comment_tab_width+'" data-href="." data-num-posts="20" data-colorscheme="light" data-mobile="auto"></div>');
+  });
+</script>
+<script async type="text/javascript" src="//connect.facebook.net/en_US/all.js#xfbml=1">FB.init();</script>
+<noscript>Please enable JavaScript to view the <a href="https://www.facebook.com/">comments powered by Facebook.</a></noscript>
+
+
+</div>
+<!-- // comments-evolved-facebook-tab -->
+<!-- comments-evolved-gplus-tab -->
+<div id='comments-evolved-gplus-tab' class='comments-evolved-embed-container content-tab clearfix'>
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+    $('#comments-evolved-gplus-tab').html('<div class="g-comments" data-width="'+window.comment_tab_width+'" data-href="." data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">Loading Google+ Comments ...</div>');
+  });
+</script>
+<script async type="text/javascript" src="//apis.google.com/js/plusone.js?callback=gpcb"></script>
+<noscript>Please enable JavaScript to view the <a href="https://plus.google.com/">comments powered by Google+.</a></noscript>
+</div>
+<!-- // comments-evolved-gplus-tab -->
+<!-- comments-evolved-trackback-tab -->
+<div id='comments-evolved-trackback-tab' class='comments-evolved-embed-container content-tab clearfix'>
+<p id="notrackbacks">No Trackbacks.</p>
+</div>
+<!-- // comments-evolved-trackback-tab -->
+</div>
+<!-- //comments-evolved-tabs -->
+
+		</div><!--home-main-->
+
+		
+<div id="sidebar-wrapper">
+
+	<ul>
+
+		<li class="sidebar-widget"><span class="sidebar-widget-header"><h3 class="sidebar-widget-header">Follow SCOREcast</h3></span><ul class="scfw_32px" style="list-style:none;margin:0;padding:0;"><li><a href="http://feeds.feedburner.com/scorecastonline/KHmx" title="Subscribe to RSS Feed" target="_blank"><img src="../../../../wp-content/plugins/subscribe-connect-follow-widget/images/32px/rss.png" alt="RSS Feed" height="32px" width="32px" /></a></li><li><a href="https://www.facebook.com/SCOREcastOnline" title="Connect on Facebook" target="_blank"><img src="../../../../wp-content/plugins/subscribe-connect-follow-widget/images/32px/facebook.png" alt="Facebook" height="32px" width="32px" /></a></li><li><a href="https://twitter.com/scorecastonline" title="Follow scorecastonline on Twitter" target="_blank"><img src="../../../../wp-content/plugins/subscribe-connect-follow-widget/images/32px/twitter.png" alt="Twitter" height="32px" width="32px" /></a></li><li><a href="https://www.youtube.com/user/scorecastonline" title="scorecastonline - YouTube" target="_blank"><img src="../../../../wp-content/plugins/subscribe-connect-follow-widget/images/32px/youtube.png" alt="YouTube" height="32px" width="32px" /></a></li><li><a href="http://soundcloud.com/scorecastonline" title="scorecastonline's page on SoundCloud" target="_blank"><img src="../../../../wp-content/plugins/subscribe-connect-follow-widget/images/32px/soundcloud.png" alt="SoundCloud" height="32px" width="32px" /></a></li></ul></li><li class="sidebar-widget"><span class="sidebar-widget-header"><h3 class="sidebar-widget-header">Facebook</h3></span>
+
+
+		<iframe src="//www.facebook.com/plugins/likebox.php?href=http://facebook.com/scorecastonline&amp;width=300&amp;height=258&amp;show_faces=true&amp;colorscheme=light&amp;stream=false&amp;show_border=false&amp;header=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300; height:258px;" allowTransparency="true"></iframe>
+
+
+
+
+
+		</li><li class="sidebar-widget"><span class="sidebar-widget-header"><h3 class="sidebar-widget-header">The Latest</h3></span>
+
+
+
+
+					<div class="category-dark">
+
+						
+						<div class="cat-dark-top">
+
+							<a href="../../../../2019/04/06/scorecast-066">
+
+							
+								<img width="620" height="400" src="../../../../wp-content/uploads/2019/04/home1-620x400.jpg" class="attachment-post-thumb size-post-thumb wp-post-image" alt="" srcset="../../../../wp-content/uploads/2019/04/home1-620x400.jpg 620w, ../../../../wp-content/uploads/2019/04/home1-300x194.jpg 300w, ../../../../wp-content/uploads/2019/04/home1-85x54.jpg 85w" sizes="(max-width: 620px) 100vw, 620px" />
+							
+							<div class="cat-dark-text">
+
+								<span class="cat-dark-byline">By SCO Editorial Staff</span>
+
+								<h2>SCOREcast 066: NAMM 2019 with Damon Tedesco</h2>
+
+								<p>Brian welcomes veteran Hollywood scoring mixer Damon Tedesco to the show.</p>
+
+							</div><!--cat-dark-text-->
+
+							</a>
+
+							
+							
+						</div><!--cat-dark-top-->
+
+						
+						
+						<div class="cat-dark-bottom">
+
+							<ul>
+
+								
+								<li>
+
+									
+										<a href="../../../../2018/05/22/scorecast-065-2"><img width="85" height="54" src="../../../../wp-content/uploads/2019/04/Orson-welles-f-for-fake-85x54.jpg" class="attachment-small-thumb size-small-thumb wp-post-image" alt="" srcset="../../../../wp-content/uploads/2019/04/Orson-welles-f-for-fake-85x54.jpg 85w, ../../../../wp-content/uploads/2019/04/Orson-welles-f-for-fake-620x400.jpg 620w, ../../../../wp-content/uploads/2019/04/Orson-welles-f-for-fake-300x194.jpg 300w" sizes="(max-width: 85px) 100vw, 85px" /></a>
+
+									
+									<span class="list-byline"><a href="../../../../author/admin" title="Posts by SCO Editorial Staff" rel="author">SCO Editorial Staff</a> | May 22, 2018</span>
+
+									<p><a href="../../../../2018/05/22/scorecast-065-2">SCOREcast 065: Dax Phelan</a></p>
+
+								</li>
+
+								
+								<li>
+
+									
+										<a href="../../../../2018/05/02/scorecast-064"><img width="85" height="54" src="../../../../wp-content/uploads/2018/05/IMG_3607-85x54.jpg" class="attachment-small-thumb size-small-thumb wp-post-image" alt="" srcset="../../../../wp-content/uploads/2018/05/IMG_3607-85x54.jpg 85w, ../../../../wp-content/uploads/2018/05/IMG_3607-620x400.jpg 620w, ../../../../wp-content/uploads/2018/05/IMG_3607-300x194.jpg 300w" sizes="(max-width: 85px) 100vw, 85px" /></a>
+
+									
+									<span class="list-byline"><a href="../../../../author/admin" title="Posts by SCO Editorial Staff" rel="author">SCO Editorial Staff</a> | May 2, 2018</span>
+
+									<p><a href="../../../../2018/05/02/scorecast-064">SCOREcast 064: The Swan Song Episode</a></p>
+
+								</li>
+
+								
+								<li>
+
+									
+										<a href="../../../../2017/12/24/scorecast-063"><img width="85" height="54" src="../../../../wp-content/uploads/2017/12/the_boss_baby_2017-wide-1-85x54.jpg" class="attachment-small-thumb size-small-thumb wp-post-image" alt="" srcset="../../../../wp-content/uploads/2017/12/the_boss_baby_2017-wide-1-85x54.jpg 85w, ../../../../wp-content/uploads/2017/12/the_boss_baby_2017-wide-1-620x400.jpg 620w, ../../../../wp-content/uploads/2017/12/the_boss_baby_2017-wide-1-300x194.jpg 300w" sizes="(max-width: 85px) 100vw, 85px" /></a>
+
+									
+									<span class="list-byline"><a href="../../../../author/admin" title="Posts by SCO Editorial Staff" rel="author">SCO Editorial Staff</a> | December 24, 2017</span>
+
+									<p><a href="../../../../2017/12/24/scorecast-063">SCOREcast 063: The Idiot&#8217;s Guide to Working for Free</a></p>
+
+								</li>
+
+								
+								<li>
+
+									
+										<a href="../../../../2017/12/02/scorecast-062-sex-abuse-in-film-music"><img width="85" height="54" src="../../../../wp-content/uploads/2017/12/Speaking-out-85x54.jpg" class="attachment-small-thumb size-small-thumb wp-post-image" alt="" srcset="../../../../wp-content/uploads/2017/12/Speaking-out-85x54.jpg 85w, ../../../../wp-content/uploads/2017/12/Speaking-out-620x400.jpg 620w, ../../../../wp-content/uploads/2017/12/Speaking-out-300x194.jpg 300w" sizes="(max-width: 85px) 100vw, 85px" /></a>
+
+									
+									<span class="list-byline"><a href="../../../../author/admin" title="Posts by SCO Editorial Staff" rel="author">SCO Editorial Staff</a> | December 2, 2017</span>
+
+									<p><a href="../../../../2017/12/02/scorecast-062-sex-abuse-in-film-music">SCOREcast 062: Sexual Abuse in Film Music</a></p>
+
+								</li>
+
+								
+								<li>
+
+									
+										<a href="../../../../2017/10/17/scorecast-061-lorne-balfe"><img width="85" height="54" src="../../../../wp-content/uploads/2017/10/LBM-Trailer-85x54.jpg" class="attachment-small-thumb size-small-thumb wp-post-image" alt="" srcset="../../../../wp-content/uploads/2017/10/LBM-Trailer-85x54.jpg 85w, ../../../../wp-content/uploads/2017/10/LBM-Trailer-620x400.jpg 620w, ../../../../wp-content/uploads/2017/10/LBM-Trailer-300x194.jpg 300w" sizes="(max-width: 85px) 100vw, 85px" /></a>
+
+									
+									<span class="list-byline"><a href="../../../../author/admin" title="Posts by SCO Editorial Staff" rel="author">SCO Editorial Staff</a> | October 17, 2017</span>
+
+									<p><a href="../../../../2017/10/17/scorecast-061-lorne-balfe">SCOREcast 061: Lorne Balfe</a></p>
+
+								</li>
+
+								
+								<li>
+
+									
+										<a href="../../../../2017/08/12/scorecast-060-michael-abels"><img width="85" height="54" src="../../../../wp-content/uploads/2017/08/Daniel-Kaluuya-in-Get-Out-20171-85x54.jpg" class="attachment-small-thumb size-small-thumb wp-post-image" alt="" srcset="../../../../wp-content/uploads/2017/08/Daniel-Kaluuya-in-Get-Out-20171-85x54.jpg 85w, ../../../../wp-content/uploads/2017/08/Daniel-Kaluuya-in-Get-Out-20171-620x400.jpg 620w, ../../../../wp-content/uploads/2017/08/Daniel-Kaluuya-in-Get-Out-20171-300x194.jpg 300w" sizes="(max-width: 85px) 100vw, 85px" /></a>
+
+									
+									<span class="list-byline"><a href="../../../../author/admin" title="Posts by SCO Editorial Staff" rel="author">SCO Editorial Staff</a> | August 12, 2017</span>
+
+									<p><a href="../../../../2017/08/12/scorecast-060-michael-abels">SCOREcast 060: Michael Abels</a></p>
+
+								</li>
+
+								
+								<li>
+
+									
+										<a href="../../../../2017/06/17/scorecast-059-the-devaluation-of-composers-with-adam-gubman"><img width="85" height="54" src="../../../../wp-content/uploads/2017/06/Adam_Gubman-85x54.jpg" class="attachment-small-thumb size-small-thumb wp-post-image" alt="" srcset="../../../../wp-content/uploads/2017/06/Adam_Gubman-85x54.jpg 85w, ../../../../wp-content/uploads/2017/06/Adam_Gubman-620x400.jpg 620w, ../../../../wp-content/uploads/2017/06/Adam_Gubman-300x194.jpg 300w" sizes="(max-width: 85px) 100vw, 85px" /></a>
+
+									
+									<span class="list-byline"><a href="../../../../author/admin" title="Posts by SCO Editorial Staff" rel="author">SCO Editorial Staff</a> | June 17, 2017</span>
+
+									<p><a href="../../../../2017/06/17/scorecast-059-the-devaluation-of-composers-with-adam-gubman">SCOREcast 059: The Devaluation of Composers with Adam Gubman</a></p>
+
+								</li>
+
+								
+								<li>
+
+									
+										<a href="../../../../2017/02/26/scorecast-058-change-is-the-only-constant"><img width="85" height="54" src="../../../../wp-content/uploads/2017/02/Screen-Shot-2017-02-24-at-12.59.14-PM-85x54.png" class="attachment-small-thumb size-small-thumb wp-post-image" alt="" srcset="../../../../wp-content/uploads/2017/02/Screen-Shot-2017-02-24-at-12.59.14-PM-85x54.png 85w, ../../../../wp-content/uploads/2017/02/Screen-Shot-2017-02-24-at-12.59.14-PM-620x400.png 620w, ../../../../wp-content/uploads/2017/02/Screen-Shot-2017-02-24-at-12.59.14-PM-300x194.png 300w" sizes="(max-width: 85px) 100vw, 85px" /></a>
+
+									
+									<span class="list-byline"><a href="../../../../author/admin" title="Posts by SCO Editorial Staff" rel="author">SCO Editorial Staff</a> | February 26, 2017</span>
+
+									<p><a href="../../../../2017/02/26/scorecast-058-change-is-the-only-constant">SCOREcast 058: Change is the Only Constant</a></p>
+
+								</li>
+
+								
+								<li>
+
+									
+										<a href="../../../../2016/12/24/scorecast-057-simon-franglen"><img width="85" height="54" src="../../../../wp-content/uploads/2016/12/magnificent-seven-poster-videos-characters-85x54.jpg" class="attachment-small-thumb size-small-thumb wp-post-image" alt="" srcset="../../../../wp-content/uploads/2016/12/magnificent-seven-poster-videos-characters-85x54.jpg 85w, ../../../../wp-content/uploads/2016/12/magnificent-seven-poster-videos-characters-620x400.jpg 620w, ../../../../wp-content/uploads/2016/12/magnificent-seven-poster-videos-characters-300x194.jpg 300w" sizes="(max-width: 85px) 100vw, 85px" /></a>
+
+									
+									<span class="list-byline"><a href="../../../../author/admin" title="Posts by SCO Editorial Staff" rel="author">SCO Editorial Staff</a> | December 24, 2016</span>
+
+									<p><a href="../../../../2016/12/24/scorecast-057-simon-franglen">SCOREcast 057: Simon Franglen</a></p>
+
+								</li>
+
+								
+								<li>
+
+									
+										<a href="../../../../2016/09/10/scorecast-056-endangered-things"><img width="85" height="54" src="../../../../wp-content/uploads/2016/09/endangered-things-85x54.png" class="attachment-small-thumb size-small-thumb wp-post-image" alt="" srcset="../../../../wp-content/uploads/2016/09/endangered-things-85x54.png 85w, ../../../../wp-content/uploads/2016/09/endangered-things-620x400.png 620w, ../../../../wp-content/uploads/2016/09/endangered-things-300x194.png 300w" sizes="(max-width: 85px) 100vw, 85px" /></a>
+
+									
+									<span class="list-byline"><a href="../../../../author/admin" title="Posts by SCO Editorial Staff" rel="author">SCO Editorial Staff</a> | September 10, 2016</span>
+
+									<p><a href="../../../../2016/09/10/scorecast-056-endangered-things">SCOREcast 056: Endangered Things</a></p>
+
+								</li>
+
+								
+							</ul>
+
+						</div><!--cat-dark-bottom-->
+
+						
+					</div><!--category-dark-->
+
+
+
+
+
+		</li>
+	</ul>
+
+</div><!--sidebar-wrapper-->
+				<div id="footer-wrapper">
+
+					<div id="footer-top">
+
+						<ul>
+
+							<li class="footer-widget"><h3 class="footer-widget-header">Search any keyword</h3><form method="get" id="searchform" action="../../../..">
+
+	<input type="text" name="s" id="s" value="Search" onfocus='if (this.value == "Search") { this.value = ""; }' onblur='if (this.value == "") { this.value = "Search"; }' />
+
+	<input type="hidden" id="search-button" />
+
+</form></li><li class="footer-widget"><h3 class="footer-widget-header">SCOREcast Online</h3>			<div class="textwidget"><p>SCOREcast Online is a resource community of working film, television, video game and mixed media music professionals that is dedicated to providing relevant news, commentary, and education for the professional media production community. Its core aim is to inform and educate anyone interested in the re-sophistication of the business and craft of making music for all visual media applications.</p>
+<p><b>DEANE OGDEN</b> // Founder and Chairman<br />
+<b>MEENA SHAMALY</b> // Managing Director<br />
+<b>MARIE-ANNE FISCHER</b> // Director of Community<br />
+<b>BRIAN RALSTON</b> // Director of Programming</p>
+</div>
+		</li><li class="footer-widget"><h3 class="footer-widget-header">Topics</h3>
+
+
+
+
+				<div class="tag-cloud">
+
+				<a href="../../../../tag/podcastshow" class="tag-cloud-link tag-link-1257 tag-link-position-1" style="font-size: 12px;">podcast show</a>
+<a href="../../../../tag/career" class="tag-cloud-link tag-link-70 tag-link-position-2" style="font-size: 12px;">career</a>
+<a href="../../../../tag/gear" class="tag-cloud-link tag-link-983 tag-link-position-3" style="font-size: 12px;">gear</a>
+<a href="../../../../tag/studio" class="tag-cloud-link tag-link-50 tag-link-position-4" style="font-size: 12px;">studio</a>
+<a href="../../../../tag/collaboration" class="tag-cloud-link tag-link-107 tag-link-position-5" style="font-size: 12px;">collaboration</a>
+<a href="../../../../tag/basics" class="tag-cloud-link tag-link-21 tag-link-position-6" style="font-size: 12px;">basics</a>
+<a href="../../../../tag/kontakt" class="tag-cloud-link tag-link-1277 tag-link-position-7" style="font-size: 12px;">kontakt</a>
+<a href="../../../../tag/orchestration" class="tag-cloud-link tag-link-1291 tag-link-position-8" style="font-size: 12px;">orchestration</a>
+<a href="../../../../tag/news" class="tag-cloud-link tag-link-430 tag-link-position-9" style="font-size: 12px;">news</a>
+<a href="../../../../tag/lists" class="tag-cloud-link tag-link-450 tag-link-position-10" style="font-size: 12px;">lists</a>
+<a href="../../../../tag/philosophy" class="tag-cloud-link tag-link-80 tag-link-position-11" style="font-size: 12px;">philosophy</a>
+<a href="../../../../tag/organization" class="tag-cloud-link tag-link-94 tag-link-position-12" style="font-size: 12px;">organization</a>
+<a href="../../../../tag/spotlighton" class="tag-cloud-link tag-link-1256 tag-link-position-13" style="font-size: 12px;">spotlight on</a>
+<a href="../../../../tag/mixing" class="tag-cloud-link tag-link-131 tag-link-position-14" style="font-size: 12px;">mixing</a>
+<a href="../../../../tag/orchestra" class="tag-cloud-link tag-link-1294 tag-link-position-15" style="font-size: 12px;">orchestra</a>
+<a href="../../../../tag/sample" class="tag-cloud-link tag-link-1293 tag-link-position-16" style="font-size: 12px;">sample</a>
+<a href="../../../../tag/sample-libraries" class="tag-cloud-link tag-link-1308 tag-link-position-17" style="font-size: 12px;">sample libraries</a>
+<a href="../../../../tag/hollywood" class="tag-cloud-link tag-link-1272 tag-link-position-18" style="font-size: 12px;">Hollywood</a>
+<a href="../../../../tag/namm" class="tag-cloud-link tag-link-1001 tag-link-position-19" style="font-size: 12px;">NAMM</a>
+<a href="../../../../tag/business" class="tag-cloud-link tag-link-1345 tag-link-position-20" style="font-size: 12px;">business</a>
+<a href="../../../../tag/community" class="tag-cloud-link tag-link-1349 tag-link-position-21" style="font-size: 12px;">community</a>
+<a href="../../../../tag/composer" class="tag-cloud-link tag-link-1353 tag-link-position-22" style="font-size: 12px;">composer</a>
+<a href="../../../../tag/academy-awards" class="tag-cloud-link tag-link-1298 tag-link-position-23" style="font-size: 12px;">academy awards</a>
+<a href="../../../../tag/veteran-2" class="tag-cloud-link tag-link-1260 tag-link-position-24" style="font-size: 12px;">veteran</a>
+<a href="../../../../tag/library" class="tag-cloud-link tag-link-1295 tag-link-position-25" style="font-size: 12px;">library</a>
+<a href="../../../../tag/oscars" class="tag-cloud-link tag-link-1299 tag-link-position-26" style="font-size: 12px;">oscars</a>
+<a href="../../../../tag/john-williams" class="tag-cloud-link tag-link-1304 tag-link-position-27" style="font-size: 12px;">john williams</a>
+<a href="../../../../tag/interview" class="tag-cloud-link tag-link-1296 tag-link-position-28" style="font-size: 12px;">interview</a>
+<a href="../../../../tag/star-wars" class="tag-cloud-link tag-link-1305 tag-link-position-29" style="font-size: 12px;">star wars</a>
+<a href="../../../../tag/strings" class="tag-cloud-link tag-link-1336 tag-link-position-30" style="font-size: 12px;">strings</a>
+<a href="../../../../tag/abuse" class="tag-cloud-link tag-link-1358 tag-link-position-31" style="font-size: 12px;">abuse</a>
+<a href="../../../../tag/morricone" class="tag-cloud-link tag-link-1327 tag-link-position-32" style="font-size: 12px;">Morricone</a>
+<a href="../../../../tag/workflow" class="tag-cloud-link tag-link-1311 tag-link-position-33" style="font-size: 12px;">workflow</a>
+<a href="../../../../tag/sound-design" class="tag-cloud-link tag-link-1339 tag-link-position-34" style="font-size: 12px;">sound design</a>
+<a href="../../../../tag/zimmer" class="tag-cloud-link tag-link-1351 tag-link-position-35" style="font-size: 12px;">zimmer</a>
+<a href="../../../../tag/sacred-cow" class="tag-cloud-link tag-link-1309 tag-link-position-36" style="font-size: 12px;">sacred cow</a>
+<a href="../../../../tag/hobbit" class="tag-cloud-link tag-link-1297 tag-link-position-37" style="font-size: 12px;">hobbit</a>
+<a href="../../../../tag/gear-spotlight" class="tag-cloud-link tag-link-1313 tag-link-position-38" style="font-size: 12px;">gear spotlight</a>
+<a href="../../../../tag/percussion" class="tag-cloud-link tag-link-1300 tag-link-position-39" style="font-size: 12px;">percussion</a>
+<a href="../../../../tag/remote-control" class="tag-cloud-link tag-link-1357 tag-link-position-40" style="font-size: 12px;">Remote Control</a>
+				</div>
+
+
+
+
+
+		</li>
+						</ul>
+
+					</div><!--footer-top-->
+
+					<div id="footer-bottom">
+
+						<p>Copyright © 2006-2017 SCOREcast Media, LLC (a subsidiary of Deane Ogden Creative International, Inc.). All Rights Reserved.</p><div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="menu"><li id="menu-item-1442" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1442"><a href="../../../../about">About SCOREcast</a></li>
+<li id="menu-item-1440" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1440"><a href="../../../../site-terms-of-use">Site Terms of Use</a></li>
+<li id="menu-item-1438" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1438"><a href="../../../../sitemap">Sitemap</a></li>
+<li id="menu-item-1441" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1441"><a href="../../../../contact">Contact Us</a></li>
+</ul></div>
+					</div><!--footer-bottom-->
+
+				</div><!--footer-wrapper-->
+
+			</div><!--content-wrapper-->
+
+		</div><!--main-->
+
+	</div><!--wrapper-->
+
+</div><!--site-->
+
+
+
+<script type='text/javascript'>
+
+//<![CDATA[
+
+jQuery(document).ready(function($){
+
+var aboveHeight = $('#header-wrapper').outerHeight();
+
+$(window).scroll(function(){
+
+	if ($(window).scrollTop() > aboveHeight){
+
+	$('#nav-wrapper').addClass('fixed').css('top','0').next()
+
+	.css('margin-top','52px');
+
+	} else {
+
+	$('#nav-wrapper').removeClass('fixed').next()
+
+	.css('margin-top','0');
+
+	}
+
+});
+
+
+
+$('.carousel-wrapper').elastislide({
+
+	imageW 	: 229,
+
+	minItems	: 1,
+
+	margin		: 0
+
+});
+
+});
+
+//]]>
+
+</script>
+
+
+
+<div id="fb-root"></div>
+
+<script>
+
+//<![CDATA[
+
+(function(d, s, id) {
+
+  var js, fjs = d.getElementsByTagName(s)[0];
+
+  if (d.getElementById(id)) return;
+
+  js = d.createElement(s); js.id = id;
+
+  js.async = true;
+
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+
+  fjs.parentNode.insertBefore(js, fjs);
+
+}(document, 'script', 'facebook-jssdk'));
+
+//]]>
+
+</script>
+
+
+
+
+<script type="text/javascript">
+
+//<![CDATA[
+
+(function() {
+
+    window.PinIt = window.PinIt || { loaded:false };
+
+    if (window.PinIt.loaded) return;
+
+    window.PinIt.loaded = true;
+
+    function async_load(){
+
+        var s = document.createElement("script");
+
+        s.type = "text/javascript";
+
+        s.async = true;
+
+        s.src = "http://assets.pinterest.com/js/pinit.js";
+
+        var x = document.getElementsByTagName("script")[0];
+
+        x.parentNode.insertBefore(s, x);
+
+    }
+
+    if (window.attachEvent)
+
+        window.attachEvent("onload", async_load);
+
+    else
+
+        window.addEventListener("load", async_load, false);
+
+})();
+
+//]]>
+
+</script>
+
+
+
+<script type="text/javascript">
+
+//<![CDATA[
+
+  (function() {
+
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+
+    po.src = 'https://apis.google.com/js/plusone.js';
+
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+
+  })();
+
+//]]>
+
+</script>
+
+
+
+<script type="text/javascript">
+
+//<![CDATA[
+
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.async=true;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+//]]>
+
+</script>
+
+
+
+
+
+
+
+<script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='ea81599d33a67539fc7515edce39d90bf687bb20f0f36260d60402de99f8dd56';j.dataset.sumoPlatform='wordpress';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>    <script type="application/javascript">
+      var ajaxurl = "../../../../wp-admin/admin-ajax.php";
+
+      function sumo_add_woocommerce_coupon(code) {
+        jQuery.post(ajaxurl, {
+          action: 'sumo_add_woocommerce_coupon',
+          code: code,
+        });
+      }
+
+      function sumo_remove_woocommerce_coupon(code) {
+        jQuery.post(ajaxurl, {
+          action: 'sumo_remove_woocommerce_coupon',
+          code: code,
+        });
+      }
+
+      function sumo_get_woocommerce_cart_subtotal(callback) {
+        jQuery.ajax({
+          method: 'POST',
+          url: ajaxurl,
+          dataType: 'html',
+          data: {
+            action: 'sumo_get_woocommerce_cart_subtotal',
+          },
+          success: function(subtotal) {
+            return callback(null, subtotal);
+          },
+          error: function(err) {
+            return callback(err, 0);
+          }
+        });
+      }
+    </script>
+    	<div style="display:none">
+	<div class="grofile-hash-map-e35d244068b8c6c35f809c5bce58e651">
+	</div>
+	</div>
+<link rel='stylesheet' id='comments_evolved_tabs_css-css'  href='../../../../wp-content/plugins/gplus-comments/assets/styles/plugin.css?ver=1.6.3' type='text/css' media='all' />
+<script type='text/javascript' src='../../../../wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='../../../../wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='../../../../wp-includes/js/jquery/ui/tabs.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='../../../../wp-includes/js/comment-reply.min.js?ver=5.1.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"http:\/\/www.scorecastonline.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../../../wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.1'></script>
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201920'></script>
+<script type='text/javascript' src='../../../../wp-content/themes/hottopix/admin/theia-post-slider/js/tps.js?ver=1.0.8'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var FB_WP=FB_WP||{};FB_WP.queue={_methods:[],flushed:false,add:function(fn){FB_WP.queue.flushed?fn():FB_WP.queue._methods.push(fn)},flush:function(){for(var fn;fn=FB_WP.queue._methods.shift();){fn()}FB_WP.queue.flushed=true}};window.fbAsyncInit=function(){FB.init({"xfbml":true,"appId":"109555475814551"});if(FB_WP && FB_WP.queue && FB_WP.queue.flush){FB_WP.queue.flush()}}
+/* ]]> */
+</script>
+<script type="text/javascript">(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="http:\/\/connect.facebook.net\/en_US\/all.js";fjs.parentNode.insertBefore(js,fjs)}(document,"script","facebook-jssdk"));</script>
+<script type='text/javascript' src='../../../../wp-includes/js/wp-embed.min.js?ver=5.1.1'></script>
+<div id="fb-root"></div><script type='text/javascript' src='https://stats.wp.com/e-201920.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:7.1.1',blog:'29563098',post:'1739',tz:'-7',srv:'www.scorecastonline.com'} ]);
+	_stq.push([ 'clickTrackerInit', '29563098', '1739' ]);
+</script>
+<!-- Comments Evolved plugin -->
+<script>jQuery("#comments-evolved-tabs").tabs();</script>
+<!-- //Comments Evolved plugin -->
+
+
+
+</body>
+
+</html>

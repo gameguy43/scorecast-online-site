@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+xmlns:rawvoice="http://www.rawvoice.com/rawvoiceRssModule/"
+>
+
+<channel>
+	<title>SCOREcastOnline.com &#124; Home of the Global Professional Film, Television and Game Music Community &#187; Asimakis Reppas</title>
+	<atom:link href="." rel="self" type="application/rss+xml" />
+	<link>http://www.scorecastonline.com</link>
+	<description></description>
+	<lastBuildDate>Thu, 06 Sep 2012 17:26:27 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=</generator>
+<!-- podcast_generator="Blubrry PowerPress/4.0.4" -->
+	<itunes:summary></itunes:summary>
+	<itunes:author>SCOREcastOnline.com | Home of the Global Professional Film, Television and Game Music Community</itunes:author>
+	<itunes:explicit>no</itunes:explicit>
+	<itunes:image href="../../../wp-content/plugins/powerpress/itunes_default.jpg" />
+	<itunes:subtitle></itunes:subtitle>
+	<image>
+		<title>SCOREcastOnline.com | Home of the Global Professional Film, Television and Game Music Community &#187; Asimakis Reppas</title>
+		<url>../../../wp-content/uploads/powerpress/sig-SCO.jpg</url>
+		<link>http://www.scorecastonline.com</link>
+	</image>
+		<item>
+		<title>Sequencing and Processing Strings</title>
+		<link>../../../2012/06/07/sequencing-and-processing-strings/</link>
+		<comments>../../../2012/06/07/sequencing-and-processing-strings/#comments</comments>
+		<pubDate>Thu, 07 Jun 2012 13:00:57 +0000</pubDate>
+		<dc:creator>Asimakis Reppas</dc:creator>
+				<category><![CDATA[Latest Resources]]></category>
+		<category><![CDATA[SCOREcast University]]></category>
+		<category><![CDATA[Sequencing & Mockups]]></category>
+
+		<guid isPermaLink="false">../../../?p=1574</guid>
+		<description><![CDATA[Composer and audio engineer Asimakis Reppas explores a wide variety of techniques that can be employed in order to sequence and produce string music, as close to the real thing as possible. Grab a nice cup of coffee and head over to SCU to read more!]]></description>
+			<content:encoded><![CDATA[<p style="text-align: justify;"><em>Hello and welcome to our first digital tour of the orchestra. In this series of articles, we will follow a path that starts at the score sheet and ends in sound. In our first part, we explore the most important section of the orchestra&#8230; the Strings! Although this article doesn’t require extensive musical knowledge, I strongly recommend you read Stellita Louka’s article on string instrumentation and orchestration. You can find it <a title="Strings : The Backbone of the Orchestra" href="../../../2012/04/26/strings-the-backbone-of-the-orchestra">here</a>. The better we understand how the string instruments work, the better decisions we can make on matters of realism and playability. Sample libraries and MIDI give us the capability to sequence things that are not viable in a live orchestra. This kind of “cheating” is common amongst TV composers were the end product is coming straight from a DAW. Of course I don’t criticize this (I actually use it), but I believe we need to know the boarders and when (and why) to cross them. So go read Stelita’s article… now!</em></p>
+<p style="text-align: justify;">Alright then, now that we’ve understand the ins and outs of the string instruments and we’ve composed the perfect passage, it’s time to… hear it. Putting down the notes in MIDI is easy, making them sound real though needs a bit of tweaking.</p>
+<p style="text-align: justify;">The first thing you need to do is learn your libraries and what they provide. Many modern libraries have pre-recorded passages and techniques which are difficult to reproduce from scratch. For example, clusters and tens risers won&#8217;t sound natural if reproduced with the combination of sustained and tremolo patches. So if your library has dedicated patches for this kind of passages, there is no excuse for you not to know about it. Know your libraries inside out, it is the same thing as knowing how an instrument works. You must be able to make the best of what you have in order to achieve the best you can.</p>
+<p style="text-align: justify;">Note: The harp although a string instrument, is intentionally left out of this article.</p>
+<h1 style="text-align: justify;">1. MIDI Sequencing and Programming</h1>
+<p style="text-align: justify;">To achieve realism, our performance needs to have human feeling. The two main things that are responsible for this are time and dynamics.</p>
+<h3 style="text-align: justify;">Time</h3>
+<p style="text-align: justify;">Although often we import a MIDI file to our sequencer (for example one that we’ve just scored in Sibelius), the best way to implement MIDI is to record the notes using a mother-keyboard with weighted keys. Even if you are not the best piano player, the results can be far superior than importing a quantized MIDI file. The weighted keys help retain the dynamics of your playing. If there is a passage you cannot play, lock the MIDI track to tempo, lower the BPM on your host DAW and try again, then bring the BPM back to the original tempo. The slight time variations you get from the recording, will give a more natural feel than the one you get with quantized notes.</p>
+<p style="text-align: justify;">If we have highly rhythmical parts and especially if there are other instruments involved (percussions, staccato brass etc.), the best approach is to quantize the notes after the recording. This way we maintain the human feel of the dynamics while the instruments “groove” with each other.</p>
+<p style="text-align: justify;">The most common time related problem with string instruments, is when we want a legato passage, that starts with a slow attack note, is sustained for a while and then the next note needs to blend seamlessly (legato) with the previous one. If we use one simple slow attack patch, there will be a gap between consecutive notes (and thus there will be no legato feel). If we use a legato patch, we won’t have the slow attack intro note. Depending on the patches we have available from our library, there are various workarounds this problem.</p>
+<ul style="text-align: justify;">
+<li>Using a slow attack patch: A common MIDI technique for string instruments is to bringing the attack (start) of notes within the ending of the previous note. Thus blending the decay of one with the attack of the other. A little trial and error is required to find the perfect mixing of the two notes.
+<p><div id="attachment_1578" class="wp-caption alignnone" style="width: 399px"><a href="../../../2012/06/07/sequencing-and-processing-strings/quantized-vs-non-quantized-edited" rel="attachment wp-att-1578"><img class="size-medium wp-image-1578" title="Quantized vs non-quantized edited" src="../../../wp-content/uploads/2012/06/Quantized-vs-non-quantized-edited-389x174.png" alt="" width="389" height="174" /></a><p class="wp-caption-text">Quantized VS Non-Quantized</p></div></li>
+<li>Using a legato patch: You can always fake the slow attack of the Strings by altering the volume (CC7) or the expression (CC11) controllers. Bringing the attack of the notes forward just inside the ending of the previous notes is still recommender though, as most libraries use this to switch to legato mode.</li>
+<li>Using a patch with keyswitches: Finding a patch that combines a slow attack articulation with a legato articulation, can overcome this problem. Use the first &#8220;keyswitch note&#8221; just before the first note (slow attack) and then for the remaining notes use the legato one. Remember that when using keyswitches, it is best to apply the &#8220;keyswitch note&#8221; just before and not exactly together with the actual note you want to hear.</li>
+<li>Using two patches: An alternative to the keyswitch solution is the use of two different patches. Assign the first note to a MIDI track with the slow attack patch and the remaining notes to another MIDI track that plays through the legato patch.</li>
+</ul>
+<div style="text-align: justify;">
+<p>Another time related trick you can do after you’ve finished composing, is altering the tempo track. Effective use of Accelerando and Rallentando will add up to the realism of the performance.</p>
+<h3>Dynamics</h3>
+<p>We can alter the dynamics within a MIDI track with the main volume (CC7), the expression (CC11) and the velocity attributes. I suggest you don&#8217;t use the main volume controller for any other reason, than to set safe headroom from 0dBFS. So if all your string instruments are routed to a single track, make sure to set each patch&#8217;s main volume so that during the louder passage of your composition, the meters do not exceed -8 to -6dBFS. Of course you’ll have to balance the volumes between different patches. We&#8217;ll discuss more about this in the mixing section.</p>
+<p>Almost all of the orchestral instruments produce a slightly different timbre depending on how hard or soft you play them. This is addressed within a sample library by recording each instrument, played with different dynamics, thus building dynamic layers. So the more dynamic layers a library provides the better. Dynamic layers are hidden from us through the velocity attribute. Different velocity zones trigger different recordings of the instrument (most libraries provide the exact numbers for each velocity zone in their manual). For example the pp in one library could be the velocity layer of 11-30 (remember that all MIDI attributes can take values between 0 and 127). For example, if we play a cello not with a velocity of 20, it will sound different than using a velocity 110 with the volume turned down. The hardness of the cello while playing ff (velocity 110) will still be heard even if we turn down the volume.</p>
+<p>In rhythmical parts, you should have a higher velocity for the on-beat notes than the off-beat ones. This simulates the way a real player would play the passage. Also when you have a crescendo with fast notes (i.e. a rising spiccato passage), adding 5 to the velocity value of each consecutive note will produce a very realistic result.</p>
+<p>The most common dynamic related problem with string instruments, is when we need to make a very big crescendo on one sustained note, say from pp to ff. Since each note can take only one velocity value, we can’t use the velocity attribute for the crescendo. The expression (CC11) controller gives us the solution. At the start of each track, set CC11 at around 80-100. This way you have headroom for crescendos (above 100) and diminuendos (below 80). In extreme situations (like our example pp-ff), chances are that if you start with a 30 velocity and 80 expression note (pp), moving the expression controller to 127 won’t be “loud” enough for a ff effect (remember how the timbre is affected by velocity). In situations like this we have to make a compromise and use a higher velocity value to our note, even if it is supposed to play pp. To make the effect viable we should place a velocity 110 note, starting at 30 (or lower) expression, so by the time we reach 127 expression we have or big crescendo. Alternatively, if our library provides we can use an appropriate DXF patch that uses the Mod-Wheel (CC01) to alternate between different dynamic layers (the manual of your library should say exactly how its DXF patches work).</p>
+<p>During long sustained passages, use expression (CC11) to alter the overall dynamics of your track and add movement. Do this after you have recorder all the instruments involved. Listen to your track and imaging you are the conductor. Keep your hand to the expression knob and adjust during playback according to taste. Subtle variations in the expression controller can really make a difference.</p>
+<h3>Articulations and Layering</h3>
+<p>Using an appropriate patch doesn’t always mean you should use the one that has the intended articulation in its name. Sometimes for a fast legato passage a legato patch isn’t working quite right. Use your ears when choosing what patch should play what passage.</p>
+<p>Another thing you need to consider when choosing appropriate patches and articulations is how the music piece would sound if played by real players (that is only if you’re interested in a realistic outcome). For example, using an 18 violin patch to play a divisi passage won’t be realistic since you have doubled the intended players. A workaround this problem is using a patch with fewer players (i.e. 4 or 8). If you have only a 4 player patch and it sounds weak, try adding a similar patch from another library.</p>
+<p>Blending two (or even more) libraries together is a very powerful tactic to add realism. Yet, while doing it, you need to keep some things in mind.</p>
+<ul>
+<li>The more different the two libraries in terms of texture the better. If they are similar, you risk having phase problems, thus weakening the sound of each instrument instead of making it stronger.</li>
+<li>Try small time variations between the two libraries to make the sound bigger.</li>
+<li>In fast rhythmical spiccato passages, you need to ignore the above suggestion or you may end up with rhythmically awkward results.</li>
+<li>Always adjust according to your ear. If two things don’t work together don’t try to force it. It is better to use a single library than two that can’t cooperate!</li>
+<li>Two libraries, means (almost) double the time you need to program and arrange the MIDI tracks. Different libraries work in different ways. For example velocity zones are different.</li>
+</ul>
+<h1>2. The Mixing Process</h1>
+<p>When we’re going to the mixing stage, we need to have a complete picture of the song. Mixing the Strings can be very different when applied to an orchestral song compared to a pop song. I’ll give some basic guidelines that work in any situation and in the same time I’ll point out things that work best in special occasions.</p>
+<p>Some libraries have pre-mixed samples so that they can work together. For example East West Symphonic Orchestra works (mix-wise) out of the box. There is always room for improvement but this kind of library can save time when you are on a tight deadline. Other libraries have more realistic and natural sound, but need some tweaking during the mixing stage to make them work with other elements.</p>
+<h3>Panorama &amp; Positioning</h3>
+<p>To imitate the layout of the orchestra, the Strings need to be positioned close to the way you’d hear them, as if standing on the conductor’s position. Note that in a grand hall this is not the way you perceive the sound of the orchestra due to the reverberation of the hall. Bass instruments (bass frequencies to be precise) are not very directional so when standing in the middle of the hall you’d hear them coming from all over. In contrast, high frequency instruments are more directional. This is something we more or less address using artificial reverberation later in the mixing stage. In the case you have a library that provides “room microphones”, it is recommended to use them (if you like the sound of the room they were recorded in) as you’ll have a more natural sounding result.</p>
+<p>Below are some general guidelines on how to position the string instruments:</p>
+<p>0<sup>o </sup>indicates the center position.</p>
+<p>A ‘-‘ before a number indicates the left side.</p>
+<p>A ‘+’ before a number indicates the right side.</p>
+<ul>
+<li>First Violins: -45<sup>o</sup> to -30<sup>o</sup></li>
+<li>Second Violins: -20<sup>o</sup> to -10<sup>o</sup></li>
+<li>Violas: -5<sup>o</sup> to +10<sup>o</sup></li>
+<li>Violoncellos: +20<sup>o</sup> to +30<sup>o</sup></li>
+<li>Contrabasses: +25<sup>o </sup>to +45<sup>o</sup></li>
+</ul>
+<div>
+<p>If you have chosen to use two libraries, try varying the position of each section within the given numbers. For example: the Violas of the first library could be placed at 0<sup>0</sup> and the ones from the second library could be at +7<sup>o</sup>. This way you’ll be covering a lot more space and with more mass!</p>
+<div>
+<p> If we exclude orchestral styles where our goal is to imitate the positioning of the orchestra, placing the Strings can vary depending on the effect we want to achieve. Below are some proposals that work in most situations:</p>
+<ul>
+<li>Place instruments which play the base line in the middle. Usually the Contrabasses or in the case of a quartet the Cello.</li>
+<li>High pitched instruments can be placed towards the sides. For example, two Violin groups can be placed left and right respectively in order to achieve a wider sound image.</li>
+<li>The Violas are better left close to the middle. If there are no second Violins (or second Violin), you can treat the Violas as if they were the second Violins. For example in the unlikely case of a Violin, Viola, Cello arrangement, you could have the Violins Left, the Violas at your right and the Cello in the middle.</li>
+</ul>
+<h3>Dynamic Processing</h3>
+<p>I strongly object in using compression in any of the three main orchestra sections (Strings, Woodwinds and Brass), but sometimes you may not be able to avoid it (though I’m sure you can solve the problem with other more time consuming processes &#8211; i.e. reprogramming the dynamics (velocity/expression) of the MIDI tracks). So in the name of the “Closing Deadline” I’ll give some general guidelines on using compression.</p>
+<ul>
+<li>Never compress with a ration bigger than 2:1. You will lose all the dynamic impact and your track will sound flat and uninteresting. The Strings rely a lot on dynamics to produce tension and drama.</li>
+<li>When adjusting the threshold and:</li>
+<ul>
+<li>You want to tighten the instruments together in a long sustained passage : bring down the threshold so that you get a constant gain reduction of 1 to 3dB.</li>
+</ul>
+<ul>
+<li>You want to control the peaks in fast staccato passages : adjust so that in the loudest section you do not get more than 3dB of gain reduction.</li>
+</ul>
+<li>Adjust the attack of the compressor so that it lets the initial transients pass without compression (around 50ms to 100ms).</li>
+<li>In situations where the strings play sustained notes, use long release settings (500-1000ms). For rhythmic passages use shorter settings (50-250ms).</li>
+<li>Apply gain accordingly to compensate for the reduction.</li>
+<li>Using compressing may add more problems than it can solve.</li>
+</ul>
+<h3>EQ</h3>
+<p>As I’ve already stated, some libraries come pre-mixed so you can use them right out of the box and achieve a very believable and well balanced result. On the other hand you may find yourself in need of blending the Strings with various other instruments which will fight for the same place in the frequency spectrum. Let’s see how we can address some basic issues that may emerge during the mixing process:</p>
+<p>Note: The numbers are rough approximations and could vary depending on the processing unit (plug-in) you use. Linear phase plug-ins are always welcome, but if you find an EQ that “colors” the result in a pleasant way, you shouldn’t be afraid to use it.</p>
+<ul>
+<li>When inside the orchestra, we want the Strings to sound as one cohesive unit. To achieve that, it is better to process the group channel with all the string instruments, than to work on individual string sections. This way we can better balance the various sections of the orchestra (Strings, Woodwinds, Brass, etc.).</li>
+<li>For an airy sound, boost with a high-shelf 3-5dB with a central frequency at around 5-7kHz. If the sound is already bright and you want to darken the filling of the Strings, cut with the same high-shelf filter at around the same frequencies.</li>
+<li>For an even darker sound with drastic sonic changes, you can apply a high-cut filter at a center frequency of 10-12kHz. This however must be balanced by cutting some ‘boomyness’ at the 400-500Hz region. Note that this technique is used mostly as an effect.</li>
+<li>For a crispy sound, boost with a bell curve and wide bandwidth at 1-3kHz. If you overdo it though the sound may become harsh and irritating. Cutting at these same frequencies will make the sound more distant pushing the Strings back in the mix.</li>
+<li>For a ‘fuller’ sound boost at around 80-180Hz. Alternatively you can cut frequencies around the 250-350 area and compensate for the loss with a boost at 150Hz. The later works very well when you have a muddy mix. Also when cutting frequencies you make room for other instruments to be heard more clearly at that frequency zone.</li>
+<li>If you want to achieve separation between individual string instruments, you can low cut the violins at 100-200Hz and high cut the contrabass at 11-14kHz. Note though that separating string instruments is difficult and not very wise. If you want separated sounds use solo instruments. Separating the First from the Second Violins is like trying to separate the ingredients of a salad (why make a salad then in the first place). In situations like this, using appropriate orchestration is the best solution (have you still not read Stellita’s article?).</li>
+<li>If you have drums or other low percussion in your track, high pass the Strings with a filter at 80-90Hz. To compensate for the loss boost around 100-110Hz. This way you make room for the kick and the other bass drums.</li>
+</ul>
+<h3>Reverb and Effects</h3>
+<p>Placing the Strings in a small room or in a large hall can have great impact on the perceived sound. When we seek out realism and natural sound, we should use convolution reverb or a very good algorithmic one. When using bad algorithmic reverb plug-ins with string instruments (which tend to have sufficient high frequencies), you can hear the digitization in the tail of the reverb… not good.</p>
+<p>Reverb should be placed in an auxiliary (FX track) so you can adjust how much of the dry signal is routed from the String’s channel. The reverb’s mix parameter should be at 100% wet. You can send each instrument individually to the reverb or the whole section from the group channel depending on the result you’re after. For a tighter result when you don’t want instruments to feel separated, you should do the later.</p>
+<ul>
+<li>To push an instrument back in the mix, sent more on the reverb and reduce the dry signal from the track’s fader. When adjusting the dry signal, experiment with pre and post fader routing to the FX (reverb), to hear the results.</li>
+<li>You can EQ the reverb channel to change its usability and crystalize the mix. When EQing the reverb channel, refer to the guidelines from the EQ section above. Cutting bass frequencies from the reverb is always good because it avoids mudding up the mix, something that reverb is very good at!</li>
+<li>For a grand hall effect, use settings with high reverb time (2-3sec), a short pre-delay (10-30ms)… and a large room.</li>
+</ul>
+<p>Other effects and tricks you can apply to a string section:</p>
+<ul>
+<li>Use a synth string patch, mixed very subtly to add harmonics and make the sound bigger.</li>
+<li>Distortion can be used to make a creepy and aggressive sound. Very good for scary passages.</li>
+<li>Harmonic exciters can be applied to fatten the sound. It is better to use it in the low string instruments. You don’t want to overemphasize instruments with high fundamental frequencies and with even higher harmonics. The sound would become harsh and irritating.</li>
+<li>Delay can be used in certain situations :</li>
+<ol>
+<li>Where you want to make a highly moving rhythmical passage.</li>
+<li>To widen the sound. This is used mostly in synth sounds.<object height="81" width="100%"><param name="movie" value="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F48912006&#038;g=1&#038;"></param><embed height="81" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F48912006&#038;g=1&#038;" type="application/x-shockwave-flash" width="100%"> </embed> </object></li>
+</ol>
+</ul>
+</div>
+</div>
+</div>
+<h1 style="text-align: justify;">Conclusion</h1>
+<p>That’s all! I hope you enjoyed this article and found a thing or two, to help you in your work. I’ll see you again when we’ll take a look at the other sections of the orchestra. Until then, be creative and don’t stop experimenting!</p>
+<p style="text-align: justify;">
+<div id="dprv_cp_v2.07" lang="en" xml:lang="en" class="notranslate" style="vertical-align:baseline; padding: 3px 3px 1px 3px; margin-top:2px; margin-bottom:2px; border-collapse:separate; line-height:16px;float:none; font-family: Tahoma, MS Sans Serif; font-size:13px;border:1px solid #bbbbbb;background:#FFFFFF none;display:table;" title="certified 7 June 2012 10:46:37 UTC by Digiprove certificate P294179" ><a href="http://www.digiprove.com/prove_copyright.aspx?id=P294179%26guid=tgkdrJ9cjEmjG7jtlUjAfg" target="_blank" rel="copyright" style="height:16px; line-height: 16px; border:0px; padding:0px; margin:0px; float:none; display:inline; text-decoration: none; background:transparent none; line-height:normal; font-family: Tahoma, MS Sans Serif; font-style:normal; font-weight:normal; font-size:11px;"><img src="../../../wp-content/plugins/digiproveblog/dp_seal_trans_16x16.png" style="max-width:none !important;vertical-align:-3px; display:inline; border:0px; margin:0px; padding:0px; float:none; background:transparent none" border="0" alt=""/><span style="font-family: Tahoma, MS Sans Serif; font-style:normal; font-size:11px; font-weight:normal; color:#636363; border:0px; float:none; display:inline; text-decoration:none; letter-spacing:normal; padding:0px; padding-left:8px; vertical-align:1px;margin-bottom:2px" onmouseover="this.style.color='#A35353';" onmouseout="this.style.color='#636363';">Copyright&nbsp;secured&nbsp;by&nbsp;Digiprove&nbsp;&copy;&nbsp;2012</span></a><a title='Click to see details of license' href="javascript:dprv_DisplayLicense('1574')" style="font-family: Tahoma, MS Sans Serif; font-style:normal; display:block; font-size:11px; font-weight:normal; color:#636363; border:0px; float:none; text-align:left; text-decoration:none; letter-spacing:normal; line-height:16px; vertical-align:1px; padding:0px; padding-left:24px;margin-bottom:2px;" onmouseover="this.style.color='#A35353';" onmouseout="this.style.color='#636363';" target="_self"></a><!--0B12B5FD03D95568A6221F537B841F7CB2344596140EB9302C9673241B9E5112--></div><div id="license_panel1574" style="position: absolute; display:none ; font-family: Tahoma, MS Sans Serif; font-style:normal; font-size:11px; font-weight:normal; color:#636363;border:1px solid #bbbbbb; float:none; max-width:640px; text-decoration:none; letter-spacing:normal; line-height:16px; vertical-align:1px; padding:0px;background:#FFFFFF none;"><table cellpadding="0" cellspacing="0" border="0" style="line-height:17px;margin:0px;padding:0px;background-color:transparent;font-family: Tahoma, MS Sans Serif; font-style:normal; font-weight:normal; font-size:11px; color:#636363"><tbody><tr><td colspan="2" style="background-color:transparent;border:0px;font-weight:bold;padding:0px;padding-left:6px; text-align:left">Original content here is published under these license terms:</td><td style="width:20px;background-color:transparent;border:0px;padding:0px"><span style="float:right; background-color:black; color:white; width:20px; text-align:center; cursor:pointer" onclick="dprv_HideLicense('1574')">&nbsp;X&nbsp;</span></td></tr><tr><td colspan="3" style="height:4px;padding:0px;background-color:transparent;border:0px"></td></tr><tr><td style="width:130px;background-color:transparent;padding:0px;padding-left:4px;border:0px; text-align:left">License Type:</td><td style="width:300px;background-color:transparent;border:0px;padding:0px; text-align:left">1</td><td style="border:0px; background-color:transparent"></td></tr><tr><td colspan="3" style="height:4px;background-color:transparent;padding:0px;border:0px"></td></tr><tr><td style="background-color:transparent;padding:0px;padding-left:4px;border:0px; vertical-align:top; text-align:left">License Summary:</td><td colspan="2" style="background-color:transparent;border:0px;padding:0px; vertical-align:top; text-align:left"></td></tr></tbody></table></div>]]></content:encoded>
+			<wfw:commentRss>../../../2012/06/07/sequencing-and-processing-strings/feed/</wfw:commentRss>
+		<slash:comments>7</slash:comments>
+		</item>
+	</channel>
+</rss>

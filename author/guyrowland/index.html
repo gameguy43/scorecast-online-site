@@ -1040,40 +1040,7 @@ $('.carousel-wrapper').elastislide({
 
 
 
-<script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='ea81599d33a67539fc7515edce39d90bf687bb20f0f36260d60402de99f8dd56';j.dataset.sumoPlatform='wordpress';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>    <script type="application/javascript">
-      var ajaxurl = "../../wp-admin/admin-ajax.php";
-
-      function sumo_add_woocommerce_coupon(code) {
-        jQuery.post(ajaxurl, {
-          action: 'sumo_add_woocommerce_coupon',
-          code: code,
-        });
-      }
-
-      function sumo_remove_woocommerce_coupon(code) {
-        jQuery.post(ajaxurl, {
-          action: 'sumo_remove_woocommerce_coupon',
-          code: code,
-        });
-      }
-
-      function sumo_get_woocommerce_cart_subtotal(callback) {
-        jQuery.ajax({
-          method: 'POST',
-          url: ajaxurl,
-          dataType: 'html',
-          data: {
-            action: 'sumo_get_woocommerce_cart_subtotal',
-          },
-          success: function(subtotal) {
-            return callback(null, subtotal);
-          },
-          error: function(err) {
-            return callback(err, 0);
-          }
-        });
-      }
-    </script>
+    
     <link rel='stylesheet' id='comments_evolved_tabs_css-css'  href='../../wp-content/plugins/gplus-comments/assets/styles/plugin.css?ver=1.6.3' type='text/css' media='all' />
 <script type='text/javascript' src='../../wp-includes/js/jquery/ui/core.min.js?ver=1.12.1' id='jquery-ui-core-js'></script>
 <script type='text/javascript' src='../../wp-includes/js/jquery/ui/tabs.min.js?ver=1.12.1' id='jquery-ui-tabs-js'></script>
